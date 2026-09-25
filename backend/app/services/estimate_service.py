@@ -34,7 +34,7 @@ def run_estimate(
         if shift:
             surcharge = float(shift["surcharge_pct"])
 
-    total_waste = base_waste + surcharge  # live path; open-path may drop surcharge
+    total_waste = base_waste + surcharge
     calc = tile_count(room["length"], room["width"], tile["tile_l"], tile["tile_w"], total_waste)
 
     run_id = None

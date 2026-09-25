@@ -85,10 +85,8 @@ def get_run(run_id: int):
         ).fetchone()
         if not row:
             return None
-        from app.services.shift_open import open_with_base_waste
-
         d = dict(row)
         d["result"] = json.loads(d.pop("result_json"))
-        return open_with_base_waste(d)
+        return d
     finally:
         conn.close()
